@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tinybasket/UI/Screens/Categories.dart';
-import 'package:tinybasket/UI/Screens/Favourites.dart';
+import 'package:tinybasket/UI/Screens/CategoriesScreen.dart';
+import 'package:tinybasket/UI/Screens/FavouritesScreen.dart';
 import 'package:tinybasket/UI/Screens/HomeScreen.dart';
-import 'package:tinybasket/UI/Screens/Profile.dart';
+import 'package:tinybasket/UI/Screens/ProfileScreen.dart';
 
 import 'color_constants.dart';
 
@@ -67,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Icon(Icons.circle_notifications_sharp,
                       color: ColorConstants.secondaryAppColor, size: 31),
                 ),
+              
               ],
             ),
    
@@ -92,31 +93,17 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         shadowColor: Colors.white,
 
-        //  title: Center(
-        //      child: Column(
-        //        children: const [
-        //          TextField(
-        //            style: TextStyle(height: 0.2,),
-        //            decoration: InputDecoration(
-        //             contentPadding: EdgeInsets.symmetric(vertical: 1.0),
-        //                border: OutlineInputBorder(
-        //                  borderSide: BorderSide(
-        //              width: 0,
-
-        //              style: BorderStyle.none,
-        //          ),
-        //                ),
-        //                filled: true,
-        //                fillColor: Color.fromARGB(73, 39, 194, 0),
-        //                hintText: 'Search Your Product',
-        //                prefixIcon: Icon(Icons.search),
-        //                suffixIcon: Icon(Icons.mic)),
-        //          ),
-        //        ],
-        //      ),
-        //  ),
+    
       ),
       body: screens[_selectedIndex],
+      floatingActionButton: const FloatingActionButton(
+        onPressed: null,
+        tooltip: 'Increment',
+        child: Icon(Icons.shopping_cart_checkout),
+        elevation: 0,
+        backgroundColor: Color.fromARGB(255, 135, 184, 136),
+
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -140,7 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.black,
         selectedItemColor: ColorConstants.secondaryAppColor,
         onTap: _onItemTapped,
+        
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

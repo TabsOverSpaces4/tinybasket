@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tinybasket/UI/Elements/categories.dart';
 import 'package:tinybasket/UI/Elements/popularCard.dart';
-import 'package:tinybasket/UI/color_constants.dart';
+import 'package:tinybasket/UI/Elements/vendorsCard.dart';
+
 
 class HomeScreenInternal extends StatefulWidget {
   const HomeScreenInternal({super.key});
@@ -51,7 +52,7 @@ class _HomeScreenInternalState extends State<HomeScreenInternal> {
                     child: TextButton(onPressed: null, child: Text(
                 'Categories',
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold,),
                     )),
                   ),
                   const CategoriesWidget(),
@@ -72,8 +73,26 @@ class _HomeScreenInternalState extends State<HomeScreenInternal> {
                     SizedBox(width: 2,),
                     PopularThisMonth(),
                   ],),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextButton(onPressed: null, child: Text(
+                'Categories',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                  Row(children: const [
+                    VendorsCard(),
+                    SizedBox(width: 2,),
+                    VendorsCard(),
+                    SizedBox(width: 2,),
+                    VendorsCard(),
+                    SizedBox(width: 2,),
+                    VendorsCard(),
+                    SizedBox(width: 2,),
+                  ]),
             ],
-        
+
           ),
         )
 
