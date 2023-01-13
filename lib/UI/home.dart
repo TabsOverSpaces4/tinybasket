@@ -18,25 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   final screens = [
-    HomeScreenInternal(),
-    Categories(),
-    Favourites(),
-    Profile(),
+    const HomeScreenInternal(),
+    const Categories(),
+    const Favourites(),
+    const Profile(),
   ];
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   HomeScreen(),
-  //   Categories(),
-  //   Favourites(),
-  //   Profile(),
-  //   // Text(
-  //   //   'Favs here',
-  //   //   style: optionStyle,
-  //   // ),
-  //   // Text(
-  //   //   'Profile here',
-  //   //   style: optionStyle,
-  //   // ),
-  // ];
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -48,24 +35,47 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu_rounded, color: ColorConstants.secondaryAppColor),
+        elevation: 0,
+        toolbarHeight: 100,
+        leading:
+            Icon(Icons.menu_rounded, color: ColorConstants.secondaryAppColor),
         backgroundColor: Colors.white,
         shadowColor: Colors.white,
-        title: Container(
-          width: double.infinity,
-          height: 40,
-          color: Colors.white,
-          child: const Center(
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Color.fromARGB(73, 39, 194, 0),
-                hintText: 'Search Your Product',
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: Icon(Icons.mic)),
-            ),
+
+
+         title: Center(
+             child: Column(
+               children: const [
+                 Center(
+                   child: TextButton(onPressed: null , child:Text('Current Location'))
+                 ),
+                 TextField(
+                   style: TextStyle(height: 0.2,),
+                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(vertical: 1.0),
+                       border: OutlineInputBorder(
+                         borderSide: BorderSide(
+                     width: 0, 
+                     
+                     style: BorderStyle.none,
+                 ),
+                       ),
+                       filled: true,
+                       fillColor: Color.fromARGB(73, 39, 194, 0),
+                       hintText: 'Search Your Product',
+                       prefixIcon: Icon(Icons.search),
+                       suffixIcon: Icon(Icons.mic)),
+                 ),
+               ],
+             ),
+         ),
+
+        actions: [
+    IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications, color: ColorConstants.secondaryAppColor),
           ),
-        ),      
+  ],
       ),
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
