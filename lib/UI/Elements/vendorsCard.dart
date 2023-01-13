@@ -18,7 +18,7 @@ class _VendorsCardState extends State<VendorsCard> {
         decoration: const BoxDecoration(
             color: Color.fromARGB(56, 158, 158, 158),
             borderRadius: BorderRadius.all(Radius.circular(12.0))),
-      ),
+      )
     );
   }
 }
