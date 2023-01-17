@@ -37,7 +37,8 @@ class _HomeScreenInternalState extends State<HomeScreenInternal> {
                 'Popular This Month!',
                   textAlign: TextAlign.left,
                   style: TextStyle(color: Colors.black, fontSize: 14.0, fontWeight: FontWeight.bold),
-                  )),
+                  )
+                  ),
                   Row(children: const [
                     PopularThisMonth(),
                     SizedBox(width: 2,),
